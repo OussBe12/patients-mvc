@@ -18,13 +18,13 @@
         <div class="card-body">
             <form method="get" th:action="@{index}">
                 <label>
-                    key world
+                    Key word
                 </label>
                 <input type="text" name="keyword" th:value="${keyword}">
                 <button type="submit" class="btn btn-primary"> Chercher</button>
             </form>
 
-            <table class="table">
+            <table  class="table-success table-striped">
                 <thead>
                 <tr>
                     <th>
@@ -54,6 +54,10 @@
                     <td th:text="${p.score}"></td>
                     <td>
                         <a onclick="return confirm('Etes vous surs ?')" class="btn btn-danger" th:href="@{delete(id=${p.id},page=${currentPage},keyword=${keyword})}">Delete
+                        </a>
+                    </td>
+                    <td>
+                        <a  class="btn btn-success" th:href="@{editPatient(id=${p.id},page=${currentPage},keyword=${keyword})}">Edit
                         </a>
                     </td>
 
